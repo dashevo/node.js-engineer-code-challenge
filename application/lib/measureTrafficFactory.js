@@ -20,7 +20,7 @@ function calculateRequestSize(request) {
 }
 
 /**
- * Calculate request size
+ * Calculate response size
  *
  * @private
  * @param {Response} response

@@ -6,7 +6,7 @@
  * @return {fetchAction}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = function storeActionFactory(p2pFetch, hostedFetch) {
+module.exports = function fetchActionFactory(p2pFetch, hostedFetch) {
   /**
    * Fetch and verify data
    *

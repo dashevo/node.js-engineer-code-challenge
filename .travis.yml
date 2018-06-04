@@ -32,6 +32,6 @@ install:
   - cd application && npm install
 
 script:
-  - npm run lint
-  - npm run test
+  - cd application && npm run lint
+  - cd application && npm run test
   - docker-compose up -d

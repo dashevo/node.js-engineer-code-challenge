@@ -12,7 +12,6 @@ const ELAPSED_TIME_FACTOR = 0.0000001;
  * @return number
  */
 function calculateExpenses(p2pTraffic, hostedTraffic, elapsedTime) {
-  // TODO: Adjust formula
   return (p2pTraffic.getSummarySize() * P2P_TRAFFIC_FACTOR) +
     (hostedTraffic.getSummarySize() * HOSTED_TRAFFIC_FACTOR) +
     (elapsedTime * ELAPSED_TIME_FACTOR);

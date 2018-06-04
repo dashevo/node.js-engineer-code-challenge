@@ -9,7 +9,6 @@ WORKDIR /
 
 # Install packages
 COPY package.json package-lock.json ./
-ENV npm_config_zmq_external=true
 RUN npm install
 ENV PATH /node_modules/.bin:$PATH
 

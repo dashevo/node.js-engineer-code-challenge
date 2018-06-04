@@ -1,7 +1,7 @@
 {
-  "name": "node.js-engineer-test-task",
+  "name": "node.js-engineer-code-challenge",
   "version": "0.1.0",
-  "description": "",
+  "description": "Code challenge for Dash Core Team candidates",
   "main": "lib/runApplication",
   "dependencies": {
     "ascii-table": "0.0.9",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dashevo/node.js-engineer-test-task.git"
+    "url": "git+https://github.com/dashevo/node.js-engineer-code-challenge.git"
   },
   "author": {
     "name": "Ivan Shumkov",
@@ -47,9 +47,9 @@
       "email": "anton.suprunchuk@dash.org"
     }
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dashevo/node.js-engineer-test-task/issues"
+    "url": "https://github.com/dashevo/node.js-engineer-code-challenge/issues"
   },
-  "homepage": "https://github.com/dashevo/node.js-engineer-test-task#readme"
+  "homepage": "https://github.com/dashevo/node.js-engineer-code-challenge#readme"
 }

@@ -16,7 +16,7 @@ function calculateRequestSize(request) {
     concatenatedRequest += request.body;
   }
 
-  return concatenatedRequest.length;
+  return Buffer.from(concatenatedRequest).length;
 }
 
 /**
@@ -27,7 +27,10 @@ function calculateRequestSize(request) {
  * @return {number}
  */
 function calculateResponseSize(response) {
-  return (response.body + JSON.stringify(response.headers.raw())).length;
+  const concatenatedResponse = response.body +
+    JSON.stringify(response.headers.raw());
+
+  return Buffer.from(concatenatedResponse).length;
 }
 
 /**

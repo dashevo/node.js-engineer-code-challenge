@@ -76,7 +76,7 @@ describe('measureTrafficFactory', () => {
     const concatenatedResponse = actualResponse.body +
       JSON.stringify(actualResponse.headers.raw());
 
-    const wholeSize = concatenatedRequest.length + concatenatedResponse.length;
+    const wholeSize = Buffer.from(concatenatedRequest + concatenatedResponse).length;
 
     expect(metricStorageMock.add).to.be.calledOnce();
     expect(metricStorageMock.add).to.be.calledWithExactly(requestMethod, requestUrl, wholeSize);

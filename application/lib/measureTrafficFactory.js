@@ -33,9 +33,9 @@ function calculateResponseSize(response) {
 /**
  * Create measureTraffic with dependencies
  *
- * @param {function} fetch Whatwg fetch
+ * @param {fetch} fetch Whatwg fetch
  * @param {TrafficMetricStorage} metricStorage
- * @returns {measureTraffic}
+ * @returns {fetch|measureTraffic}
  */
 module.exports = function measureTrafficFactory(fetch, metricStorage) {
   /**

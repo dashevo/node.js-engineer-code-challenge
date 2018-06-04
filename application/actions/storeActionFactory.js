@@ -1,8 +1,8 @@
 /**
  * Create storeAction with dependencies
  *
- * @param {function} p2pFetch
- * @param {function} hostedFetch
+ * @param {fetch} p2pFetch
+ * @param {fetch} hostedFetch
  * @return {storeAction}
  */
 // eslint-disable-next-line no-unused-vars

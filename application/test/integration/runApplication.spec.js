@@ -1,10 +1,11 @@
-const proxyquire = require('proxyquire');
 const {
   Request,
   Response,
   Headers,
   FetchError,
 } = require('node-fetch');
+
+const runApplication = require('../../lib/runApplication');
 
 describe('runApplication', () => {
   let inputData;
@@ -13,7 +14,6 @@ describe('runApplication', () => {
   let fetchActionFactoryMock;
   let storeActionMock;
   let fetchActionMock;
-  let runApplication;
 
   beforeEach(function beforeEach() {
     // eslint-disable-next-line global-require
@@ -71,13 +71,6 @@ describe('runApplication', () => {
 
       return fetchActionMock;
     });
-
-    runApplication = proxyquire('../../lib/runApplication', {
-      'node-fetch': fetchMock,
-      '../actions/fetchActionFactory': fetchActionFactoryMock,
-      '../actions/storeActionFactory': storeActionFactoryMock,
-      '../data': inputData,
-    });
   });
 
   it('should call actions and output result', async () => {
@@ -85,14 +78,19 @@ describe('runApplication', () => {
       expenses,
       p2pTraffic,
       hostedTraffic,
-      storeActionElapsedTime,
-      fetchActionElapsedTime,
-    } = await runApplication();
+      storeElapsedTime,
+      fetchElapsedTime,
+    } = await runApplication(
+      storeActionFactoryMock,
+      fetchActionFactoryMock,
+      fetchMock,
+      inputData,
+    );
 
     expect(expenses).to.be.above(0);
     expect(p2pTraffic.getAll()).to.have.length(2);
     expect(hostedTraffic.getAll()).to.have.length(2);
-    expect(storeActionElapsedTime).to.be.above(0);
-    expect(fetchActionElapsedTime).to.be.above(0);
+    expect(storeElapsedTime).to.be.above(0);
+    expect(fetchElapsedTime).to.be.above(0);
   });
 });

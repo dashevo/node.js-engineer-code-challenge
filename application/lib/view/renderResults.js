@@ -9,8 +9,8 @@ const renderTrafficMetric = require('./renderTrafficMetric');
  *
  * @param vars
  * @param vars.expenses
- * @param vars.storeActionElapsedTime
- * @param vars.fetchActionElapsedTime
+ * @param vars.storeElapsedTime
+ * @param vars.fetchElapsedTime
  * @param vars.p2pTraffic
  * @param vars.hostedTraffic
  * @return {string}
@@ -29,8 +29,8 @@ module.exports = async function renderResults(vars) {
     title: 'Elapsed time',
     heading: ['Action', 'Time'],
     rows: [
-      ['store', `${(vars.storeActionElapsedTime / 1000).toFixed(2)} s`],
-      ['fetch', `${(vars.fetchActionElapsedTime / 1000).toFixed(2)} s`],
+      ['store', `${(vars.storeElapsedTime / 1000).toFixed(2)} s`],
+      ['fetch', `${(vars.fetchElapsedTime / 1000).toFixed(2)} s`],
     ],
   }).toString();
 

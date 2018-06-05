@@ -20,7 +20,6 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "mocha": "^5.2.0",
-    "proxyquire": "^2.0.1",
     "sinon": "^5.0.10",
     "sinon-chai": "^3.1.0"
   },

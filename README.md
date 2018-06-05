@@ -65,14 +65,14 @@ Each type of object has its own validation rules.
 #### User
 
 - `id`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `type`
    - Value: `user`
    - Required
 - `userName`
-   - Format: `a-zA-Z0-1_.`
+   - Format: `a-zA-Z0-9_.`
    - Length: `20`
    - Required
 - `firstName`
@@ -85,18 +85,18 @@ Each type of object has its own validation rules.
 #### Payment
 
 - `id`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `type`
    - Value: `payment`
    - Required 
 - `fromUserId`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
-- `merchantId`
-   - Format: `a-zA-Z0-1`
+- `toMerchantId` or `toUserId`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `amount`
@@ -113,11 +113,11 @@ Each type of object has its own validation rules.
    - Value: `contact`
    - Required
 - `fromUserId`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `toUserId`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `accepted`
@@ -127,20 +127,21 @@ Each type of object has its own validation rules.
 #### Merchant
 
 - `id`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `256`
    - Required
 - `type`
    - Value: `merchant`
    - Required
 - `name`
-   - Format: `a-zA-Z0-1`
+   - Format: `a-zA-Z0-9`
    - Length: `20`
    - Required
 
 ## Summary
 
-Follow the challenge mission according to requirements and do your best. Good luck!
+Follow the [challenge mission](#your-mission) according to the [provided requirements](#requirements) and do your 
+best. Good luck!
 
 ## License
 

@@ -24,4 +24,4 @@ install:
 script:
   - docker-compose run application npm run lint
   - docker-compose run application npm run test
-  - docker-compose up -d
+#  - docker-compose run application npm run start

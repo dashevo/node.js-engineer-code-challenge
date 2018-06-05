@@ -31,13 +31,16 @@ which help us to calculate incoming and outgoing traffic.
 
 ## Your mission
 
+ - Fork this repository
  - Implement as many external services as you need to persist sample data from the application
- - Validate and persist sample data in the external service(s)
- - Fetch sample data back and ensure its integrity. **When you fetch data back from the untrusted service,
-   you should verify it for spoofing protection**
- - **Spend as little money as  possible**. Cost depends on the size of request / response and elapsed time.
-   You may find the exact formula in [the application skeleton code](application/lib/calculateExpenses.js)
+ - Implement [the store action](application/actions/storeActionFactory.js). Validate and persist sample data
+   in the external service(s)
+ - Implement [the fetch action](application/actions/fetchActionFactory.js). Fetch sample data back and ensure its 
+   integrity. **When you fetch data back from the untrusted service, you should verify it for spoofing protection**
  - Write beautiful code. Code design (OOP, SOLID, 12factor) is important to us.
+ - Run application and see results. **Try to spend as little money as possible**. Cost depends on the size
+   of request / response and elapsed time. You may find the exact formula in
+   [the application skeleton code](application/lib/calculateExpenses.js)
 
 ## Requirements
 
@@ -113,7 +116,7 @@ Each type of object has its own validation rules.
 
 ## Summary
 
-Follow the challenge mission according to requirements and do you best. Good luck!
+Follow the challenge mission according to requirements and do your best. Good luck!
 
 ## License
 

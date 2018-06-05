@@ -107,23 +107,6 @@ Each type of object has its own validation rules.
    - Format: Date ISO 8601
    - Required
 
-#### Contact
-
-- `type`
-   - Value: `contact`
-   - Required
-- `fromUserId`
-   - Format: `a-zA-Z0-9`
-   - Length: `256`
-   - Required
-- `toUserId`
-   - Format: `a-zA-Z0-9`
-   - Length: `256`
-   - Required
-- `accepted`
-   - Format: `boolean`
-   - Required
-
 #### Merchant
 
 - `id`

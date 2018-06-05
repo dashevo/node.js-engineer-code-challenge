@@ -20,3 +20,5 @@ ARG NODE_ENV=production
 ENV NODE_ENV ${NODE_ENV}
 
 EXPOSE 9229
+
+CMD ["npm", "start"]

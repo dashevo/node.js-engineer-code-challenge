@@ -67,6 +67,8 @@ Each type of object has its own validation rules.
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+- `type`
+   - Value: `user`
 - `username`
    - Format: `a-zA-Z0-1`
    - Length: `20`
@@ -82,6 +84,8 @@ Each type of object has its own validation rules.
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+- `type`
+   - Value: `payment`   
 - `fromUserId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
@@ -96,6 +100,8 @@ Each type of object has its own validation rules.
 
 #### Contact
 
+- `type`
+   - Value: `contact` 
 - `fromUserId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
@@ -110,6 +116,8 @@ Each type of object has its own validation rules.
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+- `type`
+   - Value: `merchant` 
 - `name`
    - Format: `a-zA-Z0-1`
    - Length: `20`

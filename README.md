@@ -50,7 +50,7 @@ which help us to calculate incoming and outgoing traffic.
  - Data should be permanently persisted (i.e. available after a service restart)
 
 ### Application
- - You should validate sample data in the store action
+ - You should validate sample data in the store action. Throw error if data is not valid.
  - You should check data integrity in the fetch action to avoid spoofing.
    Make sure the data returned by the fetch action matches the input data from the store action
  - You should use `p2pFetch` for sending / retrieving data from a P2P service
@@ -67,15 +67,18 @@ Each type of object has its own validation rules.
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `type`
    - Value: `user`
-- `username`
-   - Format: `a-zA-Z0-1`
+   - Required
+- `userName`
+   - Format: `a-zA-Z0-1_.`
    - Length: `20`
+   - Required
 - `firstName`
-   - Length: `20`
+   - Length: `100`
 - `lastName`
-   - Length: `20`
+   - Length: `100`
 - `email`
    - According to RFC
 
@@ -84,43 +87,56 @@ Each type of object has its own validation rules.
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `type`
-   - Value: `payment`   
+   - Value: `payment`
+   - Required 
 - `fromUserId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `merchantId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `amount`
    - Format: float number
    - Not equal or less than `0`
+   - Required
 - `createdAt`
    - Format: Date ISO 8601
+   - Required
 
 #### Contact
 
 - `type`
-   - Value: `contact` 
+   - Value: `contact`
+   - Required
 - `fromUserId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `toUserId`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `accepted`
    - Format: `boolean`
+   - Required
 
 #### Merchant
 
 - `id`
    - Format: `a-zA-Z0-1`
    - Length: `256`
+   - Required
 - `type`
-   - Value: `merchant` 
+   - Value: `merchant`
+   - Required
 - `name`
    - Format: `a-zA-Z0-1`
    - Length: `20`
+   - Required
 
 ## Summary
 

@@ -1,6 +1,4 @@
 sudo: required
-dist: trusty
-language: node_js
 
 services:
   - docker
@@ -13,15 +11,7 @@ addons:
 env:
   - DOCKER_COMPOSE_VERSION: 1.18.0
 
-node_js:
-  - 'node'
-
 before_install:
-  # Install Node.JS
-  - nvm install 8
-  - nvm use 8
-  - node --version
-
   # Install Docker Compose
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -29,9 +19,9 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 install:
-  - cd application && npm install
+  - docker-compose build
 
 script:
-  - cd application && npm run lint
-  - cd application && npm run test
+  - docker-compose run application npm run lint
+  - docker-compose run application npm run test
   - docker-compose up -d

@@ -1,0 +1,54 @@
+{
+  "name": "node.js-engineer-code-challenge",
+  "version": "0.1.0",
+  "description": "Code challenge for Dash Core Team candidates",
+  "main": "lib/runApplication",
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "asciify-image": "^0.1.3",
+    "chalk": "^2.4.1",
+    "cool-ascii-faces": "^1.3.4",
+    "hirestime": "^3.2.1",
+    "lodash.isequal": "^4.5.0",
+    "node-fetch": "^2.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.2.0",
+    "sinon": "^5.0.10",
+    "sinon-chai": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node scripts/bootstrap",
+    "test": "mocha './test/**/*.spec.js'",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashevo/node.js-engineer-code-challenge.git"
+  },
+  "author": {
+    "name": "Ivan Shumkov",
+    "email": "ivan.shumkov@dash.org"
+  },
+  "contributors": [
+    {
+      "name": "David Rey",
+      "email": "david.rey@dash.org"
+    },
+    {
+      "name": "Anton Suprunchuk",
+      "email": "anton.suprunchuk@dash.org"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dashevo/node.js-engineer-code-challenge/issues"
+  },
+  "homepage": "https://github.com/dashevo/node.js-engineer-code-challenge#readme"
+}

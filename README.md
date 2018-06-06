@@ -14,7 +14,7 @@ In the provided skeleton, you should implement just two actions:
   2. [Fetch action](application/actions/fetchActionFactory.js), which should retrieve data
      and ensure its integrity
 
-There are two types of external services available for you:
+You solution must implement at least one of the following types of external services:
   1. **Peer-to-peer service** which hypothetically runs on user's hosts. Let’s call it "P2P" service.
      Networking and storage will be cheap for you - **0.0001 DASH per byte**, but you can’t trust
      this service because a malicious user may spoof (modify) your data.
@@ -22,7 +22,8 @@ There are two types of external services available for you:
      Networking and storage will be much more expensive for you - **0.001 DASH per byte**, but the data is
      located on your server, so you can trust it.
 
-We provide two functions which are wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
+For communication with your external services we provide two functions
+which are wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
 They help us to calculate incoming and outgoing traffic.
 
 These functions are available for both the store and fetch application actions:

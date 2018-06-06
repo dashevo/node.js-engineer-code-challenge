@@ -26,9 +26,10 @@ describe('calculateExpenses', () => {
     expect(p2pTrafficMock.getSummarySize).to.be.calledOnce();
     expect(hostedTrafficMock.getSummarySize).to.be.calledOnce();
 
-    const expectedExpenses = (p2pTrafficSize * calculateExpenses.P2P_TRAFFIC_FACTOR) +
+    const expectedExpenses = ((p2pTrafficSize * calculateExpenses.P2P_TRAFFIC_FACTOR) +
       (hostedTrafficSize * calculateExpenses.HOSTED_TRAFFIC_FACTOR) +
-      (elapsedMilliseconds * calculateExpenses.ELAPSED_TIME_FACTOR);
+      (elapsedMilliseconds * calculateExpenses.ELAPSED_TIME_FACTOR)) *
+      calculateExpenses.DASH_FACTOR;
 
     expect(expenses).to.be.equal(expectedExpenses);
   });

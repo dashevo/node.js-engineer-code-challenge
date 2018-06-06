@@ -22,10 +22,10 @@ There are two types of external services available for you:
      Networking and storage will be much more expensive for you - **0.001 DASH per byte**, but the data is
      located on your server, so you can trust it.
 
-We provide two functions which are the wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
+We provide the two functions which are the wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
 They help us to calculate incoming and outgoing traffic.
 
-These functions are available for both store and fetch application's actions:
+These functions are available for both the store and fetch application actions:
   - `p2pFetch` - should be used to store / retrieve data for P2P services
   - `hostedFetch` - function to store / retrieve data for hosted services
 

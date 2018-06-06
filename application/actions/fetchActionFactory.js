@@ -14,7 +14,10 @@ module.exports = function fetchActionFactory(p2pFetch, hostedFetch) {
    * @return {object[]} Verified data
    */
   async function fetchAction() {
-    // Your code should be here
+    // Your code should be here:
+    // 1. Fetch data from external service(s)
+    // 2. Make sure the returned data matches the input data stored in the store action
+    // 3. Return data
   }
 
   return fetchAction;

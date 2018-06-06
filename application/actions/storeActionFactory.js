@@ -16,7 +16,9 @@ module.exports = function storeActionFactory(p2pFetch, hostedFetch) {
    */
   // eslint-disable-next-line no-unused-vars
   async function storeAction(inputData) {
-    // Your code should be here
+    // Your code should be here:
+    // 1. Validate inputData
+    // 2. Store inputData in external service(s)
   }
 
   return storeAction;

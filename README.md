@@ -22,17 +22,17 @@ There are two types of external services available for you:
      Networking and storage will be much more expensive for you - **0.001 DASH per byte**, but the data is
      located on your server, so you can trust it.
 
-We provide functions for both of the application's actions (store / fetch):
+We provide two functions which are the wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
+They help us to calculate incoming and outgoing traffic.
+
+These functions are available for both store and fetch application's actions:
   - `p2pFetch` - should be used to store / retrieve data for P2P services
   - `hostedFetch` - function to store / retrieve data for hosted services
-
-These functions are the wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/),
-which help us to calculate incoming and outgoing traffic.
 
 ## Your mission
 
  - Fork this repository
- - Implement as many external services as you need to persist sample data from the application
+ - Implement as many external services as you need to store sample data from the application
  - Implement [the store action](application/actions/storeActionFactory.js). Validate and persist sample data
    in the external service(s)
  - Implement [the fetch action](application/actions/fetchActionFactory.js). Fetch sample data back and ensure its 
@@ -73,12 +73,12 @@ Each type of object has its own validation rules.
    - Required
 - `userName`
    - Format: `a-zA-Z0-9_.`
-   - Length: `20`
+   - Max length: `20`
    - Required
 - `firstName`
-   - Length: `100`
+   - Max length: `100`
 - `lastName`
-   - Length: `100`
+   - Max length: `100`
 - `email`
    - According to RFC
 
@@ -118,7 +118,7 @@ Each type of object has its own validation rules.
    - Required
 - `name`
    - Format: `a-zA-Z0-9`
-   - Length: `20`
+   - Max length: `20`
    - Required
 
 ## Summary

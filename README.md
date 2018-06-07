@@ -42,6 +42,7 @@ These functions are available for both the store and fetch application actions:
  - Run application and see results. **Try to spend as little money as possible**. Cost depends on the size
    of request / response and elapsed time. You may find the exact formula in
    [the application skeleton code](application/lib/calculateExpenses.js)
+ - Send Pull Request with your solution
 
 ## Requirements
 

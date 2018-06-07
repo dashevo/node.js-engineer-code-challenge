@@ -14,7 +14,7 @@ In the provided skeleton, you should implement just two actions:
   2. [Fetch action](application/actions/fetchActionFactory.js), which should retrieve data
      and ensure its integrity
 
-You solution must implement at least one of the following types of external services:
+Also, your solution must implement at least one of the following types of external services:
   1. **Peer-to-peer service** which hypothetically runs on user's hosts. Let’s call it "P2P" service.
      Networking and storage will be cheap for you - **0.0001 DASH per byte**, but you can’t trust
      this service because a malicious user may spoof (modify) your data.
@@ -32,7 +32,7 @@ These functions are available for both the store and fetch application actions:
 
 ## Your mission
 
- - Fork this repository
+ - Clone this repository
  - Implement as many external services as you need to store sample data from the application
  - Implement [the store action](application/actions/storeActionFactory.js). Validate and persist sample data
    in the external service(s)
@@ -42,7 +42,7 @@ These functions are available for both the store and fetch application actions:
  - Run application and see results. **Try to spend as little money as possible**. Cost depends on the size
    of request / response and elapsed time. You may find the exact formula in
    [the application skeleton code](application/lib/calculateExpenses.js)
- - Send Pull Request with your solution
+ - Send us an archive with your solution
 
 ## Requirements
 

@@ -22,7 +22,7 @@ Also, your solution must implement at least one of the following types of extern
      Networking and storage will be much more expensive for you - **0.001 DASH per byte**, but the data is
      located on your server, so you can trust it.
 
-For communication with your external services we provide two functions
+For communication with your external service(s) we provide two functions
 which are wrappers around [whatwg fetch](https://fetch.spec.whatwg.org/).
 They help us to calculate incoming and outgoing traffic.
 

@@ -14,7 +14,7 @@ In the provided skeleton, you should implement just two actions:
   2. [Fetch action](application/actions/fetchActionFactory.js), which should retrieve data
      and ensure its integrity
 
-Also, you solution must implement at least one of the following types of external services:
+Also, your solution must implement at least one of the following types of external services:
   1. **Peer-to-peer service** which hypothetically runs on user's hosts. Let’s call it "P2P" service.
      Networking and storage will be cheap for you - **0.0001 DASH per byte**, but you can’t trust
      this service because a malicious user may spoof (modify) your data.

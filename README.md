@@ -24,7 +24,7 @@
 
 <p align="center">
 	<a href="https://dash.org">
-		<img src="assets/dash-logo.svg" width="600">
+		<img src="https://www.dash.org/assets/img/graphics/rgb-for-screens/dash_logo_2018_rgb_for_screens.svg" width="600">
 	</a>
 </p>
 

@@ -1,11 +1,14 @@
+const { Response } = require('node-fetch');
+
 /**
  * Create compareRequests with dependencies
  *
  * @param {measureTraffic} measureTraffic
  * @param {TrafficMetricStorage} metricStorageMock
+ * @param {fetch} fetchMock
  * @return {compareRequests}
  */
-module.exports = function compareRequestsFactory(measureTraffic, metricStorageMock) {
+module.exports = function compareRequestsFactory(measureTraffic, metricStorageMock, fetchMock) {
   /**
    * Compare sizes of two Requests
    *
@@ -15,7 +18,12 @@ module.exports = function compareRequestsFactory(measureTraffic, metricStorageMo
    * @return {Promise<void>}
    */
   async function compareRequests(firstRequest, secondRequest) {
+    fetchMock.returns(Promise.resolve(new Response('test')));
+
     await measureTraffic(firstRequest);
+
+    fetchMock.returns(Promise.resolve(new Response('test')));
+
     await measureTraffic(secondRequest);
 
     expect(metricStorageMock.add).to.be.calledTwice();

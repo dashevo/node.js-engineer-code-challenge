@@ -34,7 +34,7 @@ describe('measureTrafficFactory', () => {
     };
 
     measureTraffic = measureTrafficFactory(fetchMock, metricStorageMock);
-    compareRequests = compareRequestsFactory(measureTraffic, metricStorageMock);
+    compareRequests = compareRequestsFactory(measureTraffic, metricStorageMock, fetchMock);
     compareResponses = compareResponsesFactory(measureTraffic, metricStorageMock, fetchMock);
   });
 
@@ -83,8 +83,6 @@ describe('measureTrafficFactory', () => {
   });
 
   it('should calculate Request size', async () => {
-    fetchMock.returns(Promise.resolve(new Response()));
-
     // Test url
     await compareRequests(
       new Request('http://short.url'),

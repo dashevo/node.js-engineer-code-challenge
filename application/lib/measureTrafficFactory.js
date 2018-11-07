@@ -12,7 +12,7 @@ function calculateRequestSize(request) {
     request.method +
     JSON.stringify(request.headers.raw());
 
-  if (request.method !== 'HEAD' && request.method !== 'GET') {
+  if (request.method !== 'HEAD' || request.method !== 'GET') {
     concatenatedRequest += request.body;
   }
 

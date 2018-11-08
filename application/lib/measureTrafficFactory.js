@@ -26,8 +26,8 @@ function calculateRequestSize(request) {
  * @param {Response} response
  * @return {number}
  */
-function calculateResponseSize(response) {
-  const concatenatedResponse = response.body +
+async function calculateResponseSize(response) {
+  const concatenatedResponse = await response.text() +
     JSON.stringify(response.headers.raw());
 
   return Buffer.from(concatenatedResponse).length;
@@ -55,7 +55,7 @@ module.exports = function measureTrafficFactory(fetch, metricStorage) {
     const response = await fetch(request);
 
     const wholeSize = calculateRequestSize(request) +
-      calculateResponseSize(response);
+      await calculateResponseSize(response.clone());
 
     metricStorage.add(
       request.method,

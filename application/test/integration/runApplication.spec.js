@@ -63,8 +63,11 @@ describe('runApplication', () => {
 
     fetchActionFactoryMock = this.sinon.stub().callsFake((p2pFetch, hostedFetch) => {
       fetchActionMock = this.sinon.stub().callsFake(async () => {
-        await p2pFetch(fetchFromP2PUrl);
-        await hostedFetch(fetchFromHostedUrl);
+        let response = await p2pFetch(fetchFromP2PUrl);
+        await response.text();
+
+        response = await hostedFetch(fetchFromHostedUrl);
+        await response.text();
 
         return inputData;
       });

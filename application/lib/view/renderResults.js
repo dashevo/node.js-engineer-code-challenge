@@ -15,7 +15,7 @@ const renderTrafficMetric = require('./renderTrafficMetric');
  * @param vars.hostedTraffic
  * @return {string}
  */
-module.exports = async function renderResults(vars) {
+module.exports = function renderResults(vars) {
   let template = '\nYour expenses: ';
 
   template += chalk.blueBright.bold(`${vars.expenses.toFixed(4)} DASH`);

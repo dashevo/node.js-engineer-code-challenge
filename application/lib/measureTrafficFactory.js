@@ -55,7 +55,7 @@ module.exports = function measureTrafficFactory(fetch, metricStorage) {
     const response = await fetch(request);
 
     const wholeSize = calculateRequestSize(request) +
-      await calculateResponseSize(response);
+      await calculateResponseSize(response.clone());
 
     metricStorage.add(
       request.method,

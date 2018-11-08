@@ -24,4 +24,8 @@ describe('TrafficMetricStorage', () => {
     const expectedSize = measurements[0][2] + measurements[1][2];
     expect(storage.getSummarySize()).to.be.deep.equal(expectedSize);
   });
+
+  it('should return 0 for empty storage', () => {
+    expect(storage.getSummarySize()).to.be.equal(0);
+  });
 });

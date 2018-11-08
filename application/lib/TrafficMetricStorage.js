@@ -28,7 +28,7 @@ class TrafficMetricStorage {
    * @return {number}
    */
   getSummarySize() {
-    return this.data.reduce(([,, summarySize], [,, size]) => summarySize + size);
+    return this.data.reduce((summarySize, [,, size]) => summarySize + size, 0);
   }
 }
 

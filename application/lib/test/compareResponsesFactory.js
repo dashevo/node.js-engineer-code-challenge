@@ -18,7 +18,7 @@ module.exports = function compareResponsesFactory(measureTraffic, metricStorageM
    * @return {Promise<void>}
    */
   async function compareResponses(firstResponse, secondResponse) {
-    const request = new Request();
+    const request = new Request('http://test.com');
 
     fetchMock.returns(Promise.resolve(firstResponse));
 

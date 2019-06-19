@@ -100,7 +100,7 @@ Each type of object has its own validation rules.
 
 - `id`
    - Format: `a-zA-Z0-9`
-   - Length: `256`
+   - Length: `64`
    - Required
 - `type`
    - Value: `user`
@@ -120,18 +120,18 @@ Each type of object has its own validation rules.
 
 - `id`
    - Format: `a-zA-Z0-9`
-   - Length: `256`
+   - Length: `64`
    - Required
 - `type`
    - Value: `payment`
    - Required 
 - `fromUserId`
    - Format: `a-zA-Z0-9`
-   - Length: `256`
+   - Length: `64`
    - Required
 - `toMerchantId` or `toUserId`
    - Format: `a-zA-Z0-9`
-   - Length: `256`
+   - Length: `64`
    - Required
 - `amount`
    - Format: float number
@@ -145,13 +145,13 @@ Each type of object has its own validation rules.
 
 - `id`
    - Format: `a-zA-Z0-9`
-   - Length: `256`
+   - Length: `64`
    - Required
 - `type`
    - Value: `merchant`
    - Required
 - `name`
-   - Format: `a-zA-Z0-9`
+   - Format: `a-zA-Z0-9_.`
    - Max length: `20`
    - Required
 

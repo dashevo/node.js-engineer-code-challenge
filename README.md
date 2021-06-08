@@ -1,5 +1,5 @@
 <p align="center">
-	<a href="https://travis-ci.com/gaboesquivel/dash-challenge">
+	<a href="https://travis-ci.com/dashevo/node.js-engineer-code-challenge">
 		<img src="https://travis-ci.com/dashevo/node.js-engineer-code-challenge.svg?branch=master" alt="TravisCI">
 	</a>
 	<a href="https://github.com/airbnb/javascript">
@@ -7,9 +7,6 @@
 	</a>
 	<a href="https://git.io/col">
 		<img src="https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg" alt="Collaborative Etiquette">
-	</a>
-	<a href="https://nodejs.org/en/blog/release/v8.0.0/">
-		<img src="https://img.shields.io/badge/node%20version-carbon-brightgreen.svg" alt="Node.js 8 - Carbon">
 	</a>
 	<a href="https://twitter.com/intent/follow?screen_name=dashpay">
 		<img src="https://img.shields.io/twitter/follow/dashpay.svg?style=social&logo=twitter" alt="follow on Twitter">

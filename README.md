@@ -82,7 +82,7 @@ These functions are available for both the store and fetch application actions:
  - Data should be permanently persisted (i.e. available after a service restart).
 
 ### Application
- - You should validate sample data in the store action. Return an error if any data is invalid.
+ - You should validate sample data in the store action. Throw an error if any data is invalid.
  - You should check data integrity in the fetch action to avoid spoofing. Keep in mind that you don't have access to the original input data which you received in the store action.
  - Make sure the data returned by the fetch action matches the input data from the store action.
  - You should use `p2pFetch` for sending / retrieving data from a P2P service.

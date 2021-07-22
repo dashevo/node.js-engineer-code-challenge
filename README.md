@@ -32,23 +32,23 @@
 > Code challenge for Dash Core Team candidates
 
 The goal of this challenge is to create a browser application which receives,
-validates and displays data from a user.
+validates and displays data from users.
 
 Since it takes a while, we've prepared [the application skeleton](application) for you.
 It's not really a browser application, but we'll pretend that it is. ;)
 
 In the provided skeleton, you should implement just two actions:
   1. [Store action](application/actions/storeActionFactory.js), which should validate and persist
-     [sample data](application/data.json) in external service(s)
-  2. [Fetch action](application/actions/fetchActionFactory.js), which should retrieve data
+     [sample user data](application/data.json) in external service(s), to which your application should connect
+  2. [Fetch action](application/actions/fetchActionFactory.js), which should retrieve this data back
      and ensure its integrity
 
 Also, your solution must implement at least one of the following types of external services:
-  1. **Peer-to-peer service** which hypothetically runs on user's hosts. Let’s call it "P2P" service.
-     Networking and storage will be cheap for you - **0.0001 DASH per byte**, but you can’t trust
-     this service because a malicious user may spoof (modify) your data.
-  2. **Self-hosted service** which runs on your server. Let’s call it "hosted" service.
-     Networking and storage will be much more expensive for you - **0.001 DASH per byte**, but the data is
+  1. **Peer-to-peer service** which hypothetically runs on remote untrusted hosts. Let’s call it the "P2P" service.
+     Networking and storage will be cheap for you - **0.0001 DASH per byte** - but you can’t trust
+     this service because a malicious operator may spoof (modify) your data, or a man-in-the-middle attack may occur.
+  2. **Self-hosted service** which runs on your server. Let’s call it the "hosted" service.
+     Networking and storage will be much more expensive for you - **0.001 DASH per byte** - but the data is
      located on your server, so you can trust it.
 
 For communication with your external service(s) we provide two functions
@@ -61,32 +61,33 @@ These functions are available for both the store and fetch application actions:
 
 ## Your mission
 
- - Clone this repository
- - Implement as many external services as you need to store sample data from the application
+ - Use this repository as a template for the solution.
+ - Write a brief spec for your solution.
+ - Implement as many external services as you need to store sample data from the application.
  - Implement [the store action](application/actions/storeActionFactory.js). Validate and persist sample data
-   in the external service(s)
+   in the external service(s).
  - Implement [the fetch action](application/actions/fetchActionFactory.js). Fetch sample data back and ensure its 
-   integrity. **When you fetch data back from the untrusted service, you should verify it for spoofing protection**
+   integrity. **When you fetch data back from the untrusted service, you should verify it for spoofing protection.**
  - Write beautiful code. Code design (SOLID, Clean Architecture, 12factor) is important to us.
- - Run application and see results. **Try to spend as little money as possible**. Cost depends on the size
+ - Run application and see results. **Try to spend as little money as possible.** Cost depends on the size
    of request / response and elapsed time. You may find the exact formula in
-   [the application skeleton code](application/lib/calculateExpenses.js)
- - Send us an archive with your solution
+   [the application skeleton code](application/lib/calculateExpenses.js).
+ - Share a link to your private solution repository with us or send us an archive containing your solution.
 
 ## Requirements
 
 ### External services
- - Services should be written in JavaScript and run with Node.JS
- - Services should be dockerized and started with [docker compose](docker-compose.yml) in the root directory
- - Data should be permanently persisted (i.e. available after a service restart)
+ - Services should be written in JavaScript and run with Node.JS.
+ - Services should be dockerized and started with [docker compose](docker-compose.yml) in the root directory.
+ - Data should be permanently persisted (i.e. available after a service restart).
 
 ### Application
- - You should validate sample data in the store action. Throw error if data is not valid
- - You should check data integrity in the fetch action to avoid spoofing. Keep in mind that you don't have access to the original input data which you received in the store action
- - Make sure the data returned by the fetch action matches the input data from the store action
- - You should use `p2pFetch` for sending / retrieving data from a P2P service
- - You should use `hostedFetch` for sending / retrieving data from a hosted service
- - You cannot store any data on the application side
+ - You should validate sample data in the store action. Return an error if any data is invalid.
+ - You should check data integrity in the fetch action to avoid spoofing. Keep in mind that you don't have access to the original input data which you received in the store action.
+ - Make sure the data returned by the fetch action matches the input data from the store action.
+ - You should use `p2pFetch` for sending / retrieving data from a P2P service.
+ - You should use `hostedFetch` for sending / retrieving data from a hosted service.
+ - You cannot store any data on the application side.
 
 ### Sample data validation rules
 
